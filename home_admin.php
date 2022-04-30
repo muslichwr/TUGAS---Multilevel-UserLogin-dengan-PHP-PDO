@@ -10,6 +10,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 <html lang="en">
 
 <head>
+    <a href="loggerlogin.php" class="btn btn-info">Aktivitas Login</a>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin</title>

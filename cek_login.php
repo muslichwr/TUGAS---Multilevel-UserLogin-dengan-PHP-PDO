@@ -16,6 +16,11 @@ if ($user_valid) {
         $_SESSION['nama_lengkap'] = $user_valid['nama_lengkap'];
         $_SESSION['level'] = $user_valid['level'];
 
+         $uip=$_SERVER['REMOTE_ADDR']; // get the user ip
+         // query for inser user log in to data base
+         mysqli_query($koneksi,"INSERT INTO userlog (userId,username,userIp) values('".$_SESSION['username']."','".$_SESSION['nama_lengkap']."','$uip')");
+$host=$_SERVER['HTTP_HOST'];
+                                            $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
         if ($level == "Pegawai") {
             header('location:home_pegawai.php');
         } elseif ($level == "Operator") {
